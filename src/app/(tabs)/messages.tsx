@@ -8,10 +8,21 @@ export default function TabTwoScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Messages</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <EditScreenInfo path="app/(tabs)/messages.tsx" />
     </View>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {

@@ -1,27 +1,23 @@
 import { Image, StyleSheet, Text, View, FlatList } from "react-native";
 import Colors from "@/src/constants/Colors";
 import products from "@/assets/data/products";
+import ProductListItem from "@/src/components/ProductListItem";
 
 const product = products[1];
 
-const ProductListItem = () => {
-  return (
-    <View style={styles.container}>
-      <Image source={{ uri: product.image }} style={styles.image} />
 
-      <Text style={styles.title}>Home</Text>
-    </View>
-  );
-};
 
 export default function HomeScreen() {
   return (
-    <View>
-      <ProductListItem />
-    </View>
+    <FlatList
+      data={products}
+      renderItem={( { item } ) => <ProductListItem product={item} /> }
+      numColumns={2}
+      contentContainerStyle={{ gap:10, padding:10 }}
+      columnWrapperStyle={{ gap:10 }}
+    />
   );
 }
-
 
 
 
@@ -64,3 +60,15 @@ const styles = StyleSheet.create({
     width: "80%",
   },
 });
+
+
+
+// const ProductListItem = () => {
+//   return (
+//     <View style={styles.container}>
+//       <Image source={{ uri: product.image }} style={styles.image} />
+
+//       <Text style={styles.title}>Home</Text>
+//     </View>
+//   );
+// };
